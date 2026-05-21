@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Página especial de chá revelação com vídeo de ultrassom e surpresa final."
+    />
+    <title>Chá Revelação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page" id="page">
+      <button class="fullscreen-btn" id="fullscreen-btn" type="button" aria-label="Ativar tela cheia">⛶ Tela cheia</button>
+      <section class="glow glow-left" aria-hidden="true"></section>
+      <section class="glow glow-right" aria-hidden="true"></section>
+
+      <div class="card" id="card">
+        <p class="tag">Momento especial em família</p>
+        <h1>Chá Revelação</h1>
+        <p class="subtitle">Hoje vamos descobrir juntos uma notícia muito especial!</p>
+
+        <section class="ultrasound" id="ultrasound-section">
+          <h2>Primeiro, assista ao vídeo do ultrassom 💙</h2>
+          <div class="video-frame">
+            <video id="ultrasound-video" controls preload="auto" playsinline webkit-playsinline>
+            <source src="ultrassom.mov" type="video/quicktime" />
+            <source src="ultrassom.mp4" type="video/mp4" />
+            Seu navegador não suporta vídeo.
+            </video>
+          </div>
+          <p class="video-error hidden" id="video-error">Não foi possível carregar o vídeo. Verifique se o arquivo <strong>ultrassom.mov</strong> (ou <strong>ultrassom.mp4</strong>) está na pasta do projeto.</p>
+          <p class="video-tip" id="video-tip">O botão de revelação será liberado quando o vídeo terminar.</p>
+        </section>
+
+        <section class="suspense-stage hidden" id="suspense-stage">
+          <p class="suspense" id="suspense-text">Será menino ou menina?</p>
+          <button class="btn-primary" id="reveal-btn" type="button">Revelar agora</button>
+          <div class="countdown" id="countdown" aria-live="polite" aria-atomic="true"></div>
+        </section>
+      </div>
+
+      <section class="reveal-page hidden" id="reveal-page" aria-live="polite" aria-atomic="true">
+        <div class="reveal-content" id="reveal-content">
+          <h2 id="result-title">É MENINO!</h2>
+          <p id="result-message">Nosso príncipe está chegando!</p>
+          <p class="baby-name" id="baby-name">Warlles Batista Noleto Junior 💙</p>
+          <button class="btn-secondary" id="restart-btn" type="button">Comemorar de novo</button>
+        </div>
+      </section>
+
+      <div class="confetti-container" id="confetti-container" aria-hidden="true"></div>
+      <div class="balloons" id="balloons" aria-hidden="true"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
