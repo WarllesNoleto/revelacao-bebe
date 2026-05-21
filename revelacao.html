@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revelação Especial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="reveal-standalone-page" id="reveal-root">
+      <section class="glow glow-left" aria-hidden="true"></section>
+      <section class="glow glow-right" aria-hidden="true"></section>
+
+      <article class="reveal-standalone-card">
+        <p class="tag">Uma mensagem para nossa família</p>
+        <h1 class="emotional-title">O amor da nossa vida já é tão esperado... ✨</h1>
+        <p class="emotional-text">
+          Cada batida do coração trouxe mais emoção, mais fé e mais alegria para todos nós.
+          Hoje, compartilhamos esse momento inesquecível com vocês.
+        </p>
+
+        <h2 id="sexo-revelado">É MENINO!</h2>
+        <p id="frase-revelada">Nosso príncipe está chegando!</p>
+                <a class="btn-secondary" href="index.html">Ver novamente</a>
+      </article>
+
+      <div class="confetti-container" id="confetti-container" aria-hidden="true"></div>
+      <div class="balloons" id="balloons" aria-hidden="true"></div>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const sexo = params.get("sexo") || "É MENINO!";
+      const frase = params.get("frase") || "Nosso príncipe está chegando!";
+      document.getElementById("sexo-revelado").textContent = sexo;
+      document.getElementById("frase-revelada").textContent = frase;
+      const confettiContainer = document.getElementById("confetti-container");
+      const balloonsContainer = document.getElementById("balloons");
+
+      for (let i = 0; i < 120; i += 1) {
+        const piece = document.createElement("span");
+        piece.className = "confetti";
+        piece.style.left = `${Math.random() * 100}%`;
+        piece.style.background = Math.random() > 0.25 ? "#6db5ff" : "#c9e7ff";
+        piece.style.animationDuration = `${2.2 + Math.random() * 1.8}s`;
+        piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+        confettiContainer.appendChild(piece);
+      }
+
+      for (let i = 0; i < 14; i += 1) {
+        const balloon = document.createElement("span");
+        balloon.className = "balloon";
+        balloon.style.left = `${4 + i * 7}%`;
+        balloon.style.animationDuration = `${5 + Math.random() * 2.2}s`;
+        balloon.style.animationDelay = `${Math.random() * 0.7}s`;
+        balloonsContainer.appendChild(balloon);
+      }
+    </script>
+  </body>
+</html>
