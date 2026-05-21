@@ -28,10 +28,13 @@
 
         <section class="ultrasound" id="ultrasound-section">
           <h2>Primeiro, assista ao vídeo do ultrassom 💙</h2>
-          <video id="ultrasound-video" controls preload="metadata" playsinline>
+          <div class="video-frame">
+            <video id="ultrasound-video" controls preload="auto" playsinline webkit-playsinline>
             <source src="ultrassom.mp4" type="video/mp4" />
             Seu navegador não suporta vídeo.
-          </video>
+            </video>
+          </div>
+          <p class="video-error hidden" id="video-error">Não foi possível carregar o vídeo. Verifique se o arquivo <strong>ultrassom.mp4</strong> está na pasta do projeto.</p>
           <p class="video-tip" id="video-tip">O botão de revelação será liberado quando o vídeo terminar.</p>
         </section>
 

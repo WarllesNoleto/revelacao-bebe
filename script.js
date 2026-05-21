@@ -5,6 +5,7 @@ const nomeDoBebe = "Warlles Batista Noleto Junior";
 const ultrasoundSection = document.getElementById("ultrasound-section");
 const ultrasoundVideo = document.getElementById("ultrasound-video");
 const videoTip = document.getElementById("video-tip");
+const videoError = document.getElementById("video-error");
 const suspenseStage = document.getElementById("suspense-stage");
 const revealBtn = document.getElementById("reveal-btn");
 const restartBtn = document.getElementById("restart-btn");
@@ -88,6 +89,7 @@ function runCountdown() {
 }
 
 function liberarRevelacao() {
+  videoError.classList.add("hidden");
   suspenseStage.classList.remove("hidden");
   videoTip.textContent = "Perfeito! Agora clique em revelar para descobrir 💙";
 }
@@ -111,6 +113,13 @@ function resetExperience() {
   videoTip.textContent = "O botão de revelação será liberado quando o vídeo terminar.";
 }
 
+function handleVideoError() {
+  videoError.classList.remove("hidden");
+  videoTip.textContent = "Se preferir, você pode continuar mesmo sem o vídeo.";
+  suspenseStage.classList.remove("hidden");
+}
+
 ultrasoundVideo.addEventListener("ended", liberarRevelacao);
+ultrasoundVideo.addEventListener("error", handleVideoError);
 revealBtn.addEventListener("click", startReveal);
 restartBtn.addEventListener("click", resetExperience);
