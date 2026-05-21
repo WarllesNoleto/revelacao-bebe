@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Página especial de chá revelação para descobrir se o bebê é menino ou menina."
+    />
+    <title>Chá Revelação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page" id="page">
+      <section class="glow glow-left" aria-hidden="true"></section>
+      <section class="glow glow-right" aria-hidden="true"></section>
+
+      <div class="card" id="card">
+        <p class="tag">Momento especial em família</p>
+        <h1>Chá Revelação</h1>
+        <p class="subtitle">Hoje vamos descobrir juntos uma notícia muito especial!</p>
+        <p class="suspense" id="suspense-text">Será menino ou menina?</p>
+
+        <button class="btn-primary" id="reveal-btn" type="button">Revelar agora</button>
+
+        <div class="countdown" id="countdown" aria-live="polite" aria-atomic="true"></div>
+
+        <section class="result hidden" id="result" aria-live="polite" aria-atomic="true">
+          <h2 id="result-title">É MENINO!</h2>
+          <p id="result-message">Nosso príncipe está chegando!</p>
+          <button class="btn-secondary" id="restart-btn" type="button">Comemorar de novo</button>
+        </section>
+      </div>
+
+      <div class="confetti-container" id="confetti-container" aria-hidden="true"></div>
+      <div class="balloons" id="balloons" aria-hidden="true"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
